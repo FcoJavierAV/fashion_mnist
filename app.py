@@ -29,4 +29,9 @@ if uploaded_file is not None:
     classes = ["Camiseta/top", "Pantalón", "Jersey", "Vestido", "Abrigo", "Sandalia", "Camisa", "Zapatilla", "Bolso", "Bota"]
     st.write(f"Predicción: {classes[np.argmax(prediction)]}")
 
-    
+     # Mostrar probabilidades
+    for i, prob in enumerate(prediction[0]):
+        st.write(f"{classes[i]}: {prob:.2%}")
+
+    # Clase con mayor probabilidad
+    st.write("Predicción:", classes[np.argmax(prediction)])
