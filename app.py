@@ -15,7 +15,7 @@ uploaded_file = st.file_uploader("Sube una imágen en escala de grises de 28x28 
 if uploaded_file is not None:
     # Procesar la imágen
     image = Image.open(uploaded_file).convert('L') # Convertir RGB a ByN
-    image = image.resize(28, 28)
+    image = image.resize((28, 28))
     img_array = np.array(image) / 255.0 # Normalizar
     ''' El primer 1 indica que sólo hay una imágen, luego las dimensiones
         y el último 1 indica que sólo hay un canal de color.'''
